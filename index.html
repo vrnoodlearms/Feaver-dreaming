@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fever Dreams | Beta Transmission</title>
+    <meta
+      name="description"
+      content="Fever Dreams is an unreleased VR descent into liminal halls, dreamcore spaces, and Backrooms-inspired dread."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="intro-screen" id="intro-screen">
+      <div class="intro-flash" aria-hidden="true"></div>
+      <div class="intro-content">
+        <p class="intro-kicker">Fever Dreams</p>
+        <h1 class="intro-title">Enter The Signal</h1>
+        <p class="intro-copy">Liminal halls. Dreamcore skies. Something waiting in the tape.</p>
+      </div>
+    </div>
+
+    <div class="message-modal" id="message-modal" hidden>
+      <div class="message-backdrop" id="message-backdrop" aria-hidden="true"></div>
+      <div class="message-card">
+        <p class="panel-label">PLS READ</p>
+        <h2>Hi</h2>
+        <p>
+          If you are Nox or someone on the team, I made this project for this game and I think
+          the game is fun. I started this project when I saw your first ever video on TikTok
+          when the game was unknown, and I spent so long on it.
+        </p>
+        <p>
+          I would ask for one little thing: please give me beta tester. It would make my day.
+          I have never been a beta tester in any games. Please, this would make my day.
+        </p>
+        <button class="button button-primary message-close" type="button" id="message-close">
+          Close Message
+        </button>
+      </div>
+    </div>
+
+    <div class="message-modal" id="birthday-modal" hidden>
+      <div class="message-backdrop" id="birthday-backdrop" aria-hidden="true"></div>
+      <div class="message-card">
+        <p class="panel-label">ONE MORE THING</p>
+        <h2>Hi</h2>
+        <p>
+          My B DAY is in 3 days, and if you make me a beta tester it would be a gift
+          that I would love to get.
+        </p>
+        <p>It's my B DAY.</p>
+        <button class="button button-primary message-close" type="button" id="birthday-close">
+          Close Message
+        </button>
+      </div>
+    </div>
+
+    <div class="dream-sky" aria-hidden="true">
+      <div class="cloud cloud-one"></div>
+      <div class="cloud cloud-two"></div>
+      <div class="cloud cloud-three"></div>
+      <div class="sun-haze"></div>
+    </div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="orb orb-one" aria-hidden="true"></div>
+    <div class="orb orb-two" aria-hidden="true"></div>
+
+    <header class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-slide is-active">
+          <img src="image.png" alt="" />
+        </div>
+        <div class="hero-slide">
+          <img src="11016c5cbcce1961f1eb3b79a80ca356.png" alt="" />
+        </div>
+        <div class="hero-media-overlay"></div>
+      </div>
+
+      <nav class="topbar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span>Fever Dreams</span>
+        </div>
+        <div class="topbar-links">
+          <a class="nav-link" href="#world">About</a>
+          <a class="nav-link" href="#trailer">Trailer</a>
+          <a class="nav-link" href="#credits">Team</a>
+          <a class="nav-link" href="#discord">Join the Signal</a>
+        </div>
+        <div class="topbar-release">
+          <span class="release-label">Release Window</span>
+          <strong>0.1% chance of releasing in the next month</strong>
+        </div>
+      </nav>
+
+      <div class="hero-copy">
+        <p class="eyebrow">VR BETA TRANSMISSION // UNRELEASED</p>
+        <h1>Get lost where dreamcore beauty rots into Backrooms panic.</h1>
+        <p class="lede">
+          Fever Dreams drops you into a surreal VR maze of liminal hallways,
+          false comfort, flickering memory, and something moving just outside
+          your focus.
+        </p>
+        <div class="hero-tags" aria-label="Game tags">
+          <span>Liminal VR</span>
+          <span>Backrooms Horror</span>
+          <span>Dreamcore Sky</span>
+        </div>
+        <div class="soundtrack-panel">
+          <p class="panel-label">Soundtrack Loop</p>
+          <div class="soundtrack-row">
+            <button class="button button-primary soundtrack-toggle" type="button" id="soundtrack-toggle">
+              Play Ambient Mix
+            </button>
+            <p class="soundtrack-nowplaying">
+              Now playing: <span id="track-name">Ready to start</span>
+            </p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#discord">Enter the Beta Hub</a>
+          <a class="button button-secondary" href="#trailer">Watch Trailer</a>
+          <a class="button button-secondary" href="#gallery">See the Fragments</a>
+        </div>
+        <div class="control-strip">
+          <button class="button button-secondary utility-button" type="button" id="vhs-toggle">
+            Enable VHS Mode
+          </button>
+          <div class="signal-box">
+            <p class="panel-label">Signal Scanner</p>
+            <strong id="signal-status">Scanning empty rooms...</strong>
+          </div>
+        </div>
+      </div>
+
+      <aside class="status-panel">
+        <p class="panel-label">Current Status</p>
+        <div class="status-row">
+          <span class="status-dot"></span>
+          <strong>Closed Beta in Development</strong>
+        </div>
+        <p class="panel-copy">
+          Not released yet. The build is still evolving while the world, scares,
+          and strange dream logic are being refined.
+        </p>
+        <div class="signal-list">
+          <div>
+            <span>Genre</span>
+            <strong>VR Horror / Dream Exploration</strong>
+          </div>
+          <div>
+            <span>Influence</span>
+            <strong>Backrooms + Dreamcore</strong>
+          </div>
+          <div>
+            <span>Access</span>
+            <strong>Community-led beta updates</strong>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <main>
+      <section class="ticker" aria-label="Site banner">
+        <div class="ticker-track">
+          <span>UNRELEASED VR EXPERIENCE</span>
+          <span>DREAMCORE ATMOSPHERE</span>
+          <span>LIMINAL HORROR</span>
+          <span>BACKROOMS-INSPIRED</span>
+          <span>BETA SIGNAL ACTIVE</span>
+          <span>UNRELEASED VR EXPERIENCE</span>
+          <span>DREAMCORE ATMOSPHERE</span>
+          <span>LIMINAL HORROR</span>
+          <span>BACKROOMS-INSPIRED</span>
+          <span>BETA SIGNAL ACTIVE</span>
+        </div>
+      </section>
+
+      <section class="section world" id="world">
+        <div class="section-heading">
+          <p class="eyebrow">THE FEELING</p>
+          <h2>A place that looks soft until it notices you.</h2>
+          <p class="section-intro">
+            Fever Dreams is an unreleased VR horror project built around liminal exploration,
+            dreamcore contrast, and the quiet dread of spaces that should feel safe but never do.
+          </p>
+        </div>
+        <div class="world-grid">
+          <article class="card">
+            <h3>Liminal VR Presence</h3>
+            <p>
+              Explore uncanny spaces designed to feel half-remembered, from
+              glowing halls to impossible rooms that loop like broken sleep.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Dreamcore Contrast</h3>
+            <p>
+              Warm colors, nostalgic textures, and eerie stillness collide with
+              threat, distortion, and the sense that reality is slipping.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Backrooms Tension</h3>
+            <p>
+              Expect isolation, maze-like environments, ambient dread, and the
+              constant pressure of never quite being alone.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section quote-band">
+        <p>
+          Fever Dreams is not a power fantasy. It is the feeling of wandering too
+          far into a dream that starts remembering you back.
+        </p>
+      </section>
+
+      <section class="section trailer-section" id="trailer">
+        <div class="section-heading">
+          <p class="eyebrow">FOUND FOOTAGE</p>
+          <h2>Watch the full tape.</h2>
+          <p class="lede">
+            A raw look at Fever Dreams' yellow halls, distorted spaces, and VHS-soaked
+            dread. This section keeps the whole teaser visible instead of treating it
+            like a quick background clip.
+          </p>
+        </div>
+
+        <div class="trailer-layout">
+          <div class="video-shell">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/ZpMbx0Pd5KE?si=48Tc1JV6b-LIpAZm"
+                title="Fever Dreams trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="trailer-actions">
+              <a
+                class="button button-primary"
+                href="https://www.youtube.com/watch?v=ZpMbx0Pd5KE"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Trailer on YouTube
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://www.tiktok.com/@official_lethal_vr/video/7623179243085696269?_r=1&_t=ZP-958JI611JEd"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Watch TikTok Clip
+              </a>
+            </div>
+          </div>
+
+          <div class="trailer-copy">
+            <article class="roadmap-card">
+              <span>Premise</span>
+              <p>
+                Fever Dreams is a VR horror experience built around liminal exploration,
+                dreamcore unease, and the dread of wandering somewhere that should not exist.
+              </p>
+            </article>
+            <article class="roadmap-card">
+              <span>Tone</span>
+              <p>
+                The game mixes soft nostalgic visuals with analog horror energy, lonely
+                architecture, and the feeling that every room is quietly watching back.
+              </p>
+            </article>
+            <article class="roadmap-card">
+              <span>Beta State</span>
+              <p>
+                This is an unreleased beta project. The world, scares, pacing, and visual
+                identity are still being shaped with community feedback.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section">
+        <div class="memory-block">
+          <p class="eyebrow">WHAT TO EXPECT</p>
+          <h2>Fever Dreams is built around atmosphere first.</h2>
+          <p>
+            This isn't a loud horror ride. It leans into disorientation, empty
+            comfort, spatial unease, and the kind of fear that creeps in slowly
+            while you keep walking anyway.
+          </p>
+        </div>
+
+        <div class="feature-stack">
+          <article class="feature-card">
+            <span>01</span>
+            <h3>Immersive VR scale</h3>
+            <p>Spaces are meant to feel too real, too close, and slightly wrong.</p>
+          </article>
+          <article class="feature-card">
+            <span>02</span>
+            <h3>Surreal environmental storytelling</h3>
+            <p>Meaning is hidden in repetition, layout shifts, and dream logic.</p>
+          </article>
+          <article class="feature-card">
+            <span>03</span>
+            <h3>Beta-first community feedback</h3>
+            <p>The early community helps shape scares, polish, and pacing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery">
+        <div class="section-heading">
+          <p class="eyebrow">VISUAL FRAGMENTS</p>
+          <h2>Captured rooms from the Fever Dreams signal.</h2>
+          <p class="lede">
+            The reveal page now uses your actual media to sell the mood: yellow
+            maze spaces, analog grime, and dreamlike unease.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-card tall">
+            <div class="gallery-image-wrap tall-image">
+              <img src="11016c5cbcce1961f1eb3b79a80ca356.png" alt="Fever Dreams yellow room screenshot" />
+            </div>
+            <div class="gallery-copy">
+              <p class="panel-label">Recovered Frame 01</p>
+              <h3>The room looks empty until you notice the wall staring back.</h3>
+              <p>Yellow wallpaper, open thresholds, and that strange in-between feeling the Backrooms do best.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="gallery-image-wrap">
+              <img src="image.png" alt="Fever Dreams VHS creature screenshot" />
+            </div>
+            <div class="gallery-copy">
+              <p class="panel-label">Recovered Frame 02</p>
+              <h3>Found footage panic</h3>
+              <p>Analog distortion makes every sighting feel worse, like the tape caught something you should not have seen.</p>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="gallery-visual visual-sky"></div>
+            <div class="gallery-copy">
+              <p class="panel-label">Dream Layer</p>
+              <h3>A soft sky over a hostile place</h3>
+              <p>Dreamcore color bleeds into the site design so the horror feels dreamy before it turns wrong.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section roadmap-section">
+        <div class="section-heading">
+          <p class="eyebrow">BETA DIRECTION</p>
+          <h2>What the current version is chasing.</h2>
+        </div>
+        <div class="roadmap-grid">
+          <article class="roadmap-card">
+            <span>Atmosphere</span>
+            <p>Dense environmental mood, surreal comfort, and rooms that feel emotionally wrong.</p>
+          </article>
+          <article class="roadmap-card">
+            <span>Fear</span>
+            <p>Slow-burn tension over cheap jumps, with pressure built from scale, sound, and uncertainty.</p>
+          </article>
+          <article class="roadmap-card">
+            <span>VR Presence</span>
+            <p>Spaces designed to feel physical and invasive, where every turn matters more in-headset.</p>
+          </article>
+          <article class="roadmap-card">
+            <span>Community</span>
+            <p>Discord-driven updates, early reactions, and player feedback shaping the beta experience.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section details-section">
+        <div class="section-heading">
+          <p class="eyebrow">WHY IT HITS</p>
+          <h2>A slower kind of horror made for VR.</h2>
+        </div>
+        <div class="details-grid">
+          <article class="detail-card">
+            <h3>Dreamcore spaces with a threat underneath</h3>
+            <p>
+              Fever Dreams leans into the weird comfort of familiar-looking places, then
+              corrupts that feeling with emptiness, strange markings, and impossible geometry.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Backrooms influence without losing identity</h3>
+            <p>
+              The yellow rooms, liminal silence, and maze-like structure are all there, but
+              the project pushes toward its own dream-logic instead of just copying a meme.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Designed to be stronger in-headset</h3>
+            <p>
+              In VR, scale, distance, and stillness land harder. Hallways feel longer, corners
+              feel riskier, and every sound becomes personal.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section incident-section" id="incident-log">
+        <div class="section-heading">
+          <p class="eyebrow">INCIDENT LOG</p>
+          <h2>Recovered notes from the halls.</h2>
+          <p class="lede">
+            Small fragments of story make the world feel alive before the full beta is even out.
+          </p>
+        </div>
+        <div class="incident-grid">
+          <details class="incident-card" open>
+            <summary>Log 01 // Wallpaper room audio returned a second voice</summary>
+            <p>
+              Testers reported hearing their own footsteps continue after they stopped moving.
+              The room stayed empty on replay, but the tape did not.
+            </p>
+          </details>
+          <details class="incident-card">
+            <summary>Log 02 // Markings appeared after the room reset</summary>
+            <p>
+              A clean corridor loaded with fresh wall writing during a later run. No one on the team
+              claimed to place it there.
+            </p>
+          </details>
+          <details class="incident-card">
+            <summary>Log 03 // Comfort visuals caused the strongest panic response</summary>
+            <p>
+              Pastel light and quiet ambient rooms felt safer, but players stayed in them less.
+              The softer the scene looked, the more wrong it felt in VR.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section credits-section" id="credits">
+        <div class="section-heading">
+          <p class="eyebrow">CREDITS</p>
+          <h2>Official Fever Dreams team and community credits.</h2>
+          <p class="lede">
+            Fever Dreams is powered by its developers, staff team, testers, and community support.
+          </p>
+        </div>
+
+        <div class="credits-grid">
+          <article class="credit-panel credit-panel-featured">
+            <p class="panel-label">Project Leadership</p>
+            <h3>Owners</h3>
+            <div class="credit-people">
+              <div class="credit-person">
+                <span class="credit-role">Owner</span>
+                <strong>Nox</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Co-Owner</span>
+                <strong>L3thal</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Co-Owner</span>
+                <strong>PS|Zardy</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="credit-panel">
+            <p class="panel-label">Management</p>
+            <h3>Community Team</h3>
+            <div class="credit-people">
+              <div class="credit-person">
+                <span class="credit-role">Community Manager</span>
+                <strong>Ash/Bnot</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Community Manager</span>
+                <strong>Zapo</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Modeler</span>
+                <strong>Basement Man</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Modeler</span>
+                <strong>shrigle</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Scripter</span>
+                <strong>rehnco</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="credit-panel">
+            <p class="panel-label">Staff</p>
+            <h3>Moderation & Trusted Survivors</h3>
+            <div class="credit-people compact">
+              <div class="credit-person">
+                <span class="credit-role">Moderator</span>
+                <strong>Asherrr</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Trial Moderator</span>
+                <strong>Soulz (Gold CC)</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Trusted Survivor</span>
+                <strong>Bmusic</strong>
+              </div>
+              <div class="credit-person">
+                <span class="credit-role">Trusted Survivor</span>
+                <strong>MonkeySees...</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="credit-panel">
+            <p class="panel-label">Site Production</p>
+            <h3>Fan Site</h3>
+            <p class="credit-note">
+              This website was made by Feaver dream fan for the community and styled to match the project's Backrooms and dreamcore beta identity.
+            </p>
+            <div class="credit-people compact">
+              <div class="credit-person">
+                <span class="credit-role">Site Creator</span>
+                <strong>Feaver dream fan</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section discord-section" id="discord">
+        <div class="discord-copy">
+          <p class="eyebrow">COMMUNITY ACCESS</p>
+          <h2>Want in when the next signal opens?</h2>
+          <p>
+            Join the Discord to follow beta news, watch the project evolve, and
+            be first in line for future access drops.
+          </p>
+        </div>
+
+        <div class="discord-panel">
+          <p class="panel-label">Discord Invite</p>
+          <a
+            class="button button-primary wide"
+            href="https://discord.gg/ugFNa5kyPP"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Join the Fever Dreams Discord"
+          >
+            Join the Fever Dreams Discord
+          </a>
+          <p class="small-print">
+            Follow beta progress, meet the community, and catch future access news.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Fever Dreams</strong>
+        <p>Official community website concept for the unreleased beta experience.</p>
+      </div>
+      <div>
+        <strong>Status</strong>
+        <p>In beta development. Not released yet.</p>
+      </div>
+      <div>
+        <strong>Community</strong>
+        <p><span id="year"></span> Fever Dreams. Follow updates through Discord.</p>
+      </div>
+    </footer>
+
+    <audio id="dream-audio" preload="auto"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
